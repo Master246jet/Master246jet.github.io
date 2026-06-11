@@ -9,7 +9,9 @@
 </head>
 <body onload="startTime()">
 
+   
   <div id="date"></div>
+  <h2>JS Clock</h2>
   <div id="clock"></div>
   <div id="weather"></div>
   <div id="prayers"></div>
@@ -36,6 +38,7 @@
       m = checkTime(m);
       s = checkTime(s);
       document.getElementById('clock').innerHTML = h + ":" + m + ":" + s;
+      dateToday(today);
       seTimeout(startTime, 1000);
     }
     function checkTime(i) {
