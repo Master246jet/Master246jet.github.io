@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <style>
+    /* Design this yourself. Start ugly. */
+  </style>
+</head>
+<body onload="startTime()">
+
+  <div id="date"></div>
+  <div id="clock"></div>
+  <div id="weather"></div>
+  <div id="prayers"></div>
+  <div id="github"></div>
+  <textarea id="pad"></textarea>
+
+    <!--
+    Clock first — just make it show the current time.
+    Scratchpad second - localStorage.getItem/setItem
+    Weather - fetch() + api.open-meteo.com
+    Prayer Times - api.aladhan.com/v1/timingdByCity
+    Github - api.github.com/users/Master246jet/events/public
+
+    Future Widgets:
+    Folder of Projects deployed -->
+
+  <script>
+    // Start here. Build one widget at a time.
+    function startTime() {
+      const today = new Date();
+      let h = today.getHours();
+      let m = today.getMinutes();
+      let s = today.getSeconds();
+      m = checkTime(m);
+      s = checkTime(s);
+      document.getElementById('clock').innerHTML = h + ":" + m + ":" + s;
+      seTimeout(startTime, 1000);
+    }
+    function checkTime(i) {
+      if (i < 10) {i = "0" + i}; // add zero before numbers < 10
+      return i;
+    }
+    function dateToday(today) {
+      let m = today.getMonth();
+      let d = today.getDate();
+      let y = today.getFullYear();
+      document.getElementById('date').innerHTML = d + ", " + m + ", " + y;
+    }
+  </script>
+</body>
+</html>
