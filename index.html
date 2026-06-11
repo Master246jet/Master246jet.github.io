@@ -39,7 +39,7 @@
       s = checkTime(s);
       document.getElementById('clock').innerHTML = h + ":" + m + ":" + s;
       dateToday(today);
-      seTimeout(startTime, 1000);
+      setTimeout(startTime, 1000);
     }
     function checkTime(i) {
       if (i < 10) {i = "0" + i}; // add zero before numbers < 10
@@ -49,7 +49,7 @@
       let m = today.getMonth();
       let d = today.getDate();
       let y = today.getFullYear();
-      document.getElementById('date').innerHTML = d + ", " + m + ", " + y;
+      document.getElementById('date').innerHTML = d + ", " + (m + 1) + ", " + y;
     }
   </script>
 </body>
